@@ -1,11 +1,10 @@
-/* Logo Colours */
+/* Colours */
 $logo_blue: #36B7BC;
 $logo_green: #BEC945;
 $logo_pink: #E466A1;
 $logo_white: #FFFFFF;
 
-/* Animations */
-
+/* Keyframe Animations */
 @keyframes color-cycle {
   0% { fill: $logo_pink; }
   50% { fill: $logo_green; }
@@ -30,24 +29,28 @@ $logo_white: #FFFFFF;
   100% { -webkit-transform: scale(1.0); }
 }
 
-/* Mixins */
+/* Animation Mixins */
 @mixin color-cycle-animation($delay) {
   $time: 2;
   -webkit-animation: color-cycle #{$time + $delay}s ease infinite;
   animation: color-cycle #{$time + $delay}s ease infinite;
-  -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+
+  -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
 
 @mixin grow-animation($delay) {
   transform: scale(0.0);
   -webkit-transform: scale(0.0);
+
   transform-origin: 50% 50% 0;
   -webkit-transform-origin: 50% 50% 0;
+
   animation: grow 0.5s ease forwards;
   -webkit-animation: grow 0.5s ease forwards;
+
   animation-delay: #{$delay}s;
-  -webkit-animation-delay: #{$delay}s; /* Chrome, Safari, Opera */
+  -webkit-animation-delay: #{$delay}s;
 }
 
 /* Style */
@@ -55,6 +58,7 @@ $logo_white: #FFFFFF;
   width: 240px;
 
   .kaleider {
+
     @for $i from 1 through 2 {
       .inner polygon:nth-child(#{$i}n) {
         @include color-cycle-animation($i)
@@ -75,14 +79,17 @@ $logo_white: #FFFFFF;
       fill: $logo_pink;
       @include grow-animation(0.15);
     }
+
   }
 
   .text {
+
     @include grow-animation(0.2);
     fill: $logo_white;
 
     #a.triangle {
       fill: $logo_pink;
     }
+
   }
 }
