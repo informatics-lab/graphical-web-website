@@ -5,6 +5,18 @@ $logo_pink: #E466A1;
 $logo_white: #FFFFFF;
 
 /* Animations */
+@-webkit-keyframes color-cycle {
+  0% { fill: $logo_pink; }
+  50% { fill: $logo_green; }
+  100% { fill: $logo_blue; }
+}
+
+@-webkit-keyframes grow {
+  0% { transform: scale(0.0); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1.0); }
+}
+
 @keyframes color-cycle {
   0% { fill: $logo_pink; }
   50% { fill: $logo_green; }
@@ -17,13 +29,10 @@ $logo_white: #FFFFFF;
   100% { transform: scale(1.0); }
 }
 
-@keyframes expand {
-
-}
-
 /* Mixins */
 @mixin color-cycle-animation($delay) {
   $time: 2;
+  -webkit-animation: color-cycle #{$time + $delay}s ease infinite;
   animation: color-cycle #{$time + $delay}s ease infinite;
   -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
   animation-direction: alternate;
@@ -31,10 +40,13 @@ $logo_white: #FFFFFF;
 
 @mixin grow-animation($delay) {
   transform: scale(0.0);
+  -webkit-transform: scale(0.0);
   transform-origin: 50% 50% 0;
+  -webkit-transform-origin: 50% 50% 0;
   animation: grow 0.5s ease forwards;
-  -webkit-animation-delay: #{$delay}s; /* Chrome, Safari, Opera */
+  -webkit-animation: grow 0.5s ease forwards;
   animation-delay: #{$delay}s;
+  -webkit-animation-delay: #{$delay}s; /* Chrome, Safari, Opera */
 }
 
 /* Style */
