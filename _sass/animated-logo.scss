@@ -5,17 +5,6 @@ $logo_pink: #E466A1;
 $logo_white: #FFFFFF;
 
 /* Animations */
-@-webkit-keyframes color-cycle {
-  0% { fill: $logo_pink; }
-  50% { fill: $logo_green; }
-  100% { fill: $logo_blue; }
-}
-
-@-webkit-keyframes grow {
-  0% { transform: scale(0.0); }
-  70% { transform: scale(1.05); }
-  100% { transform: scale(1.0); }
-}
 
 @keyframes color-cycle {
   0% { fill: $logo_pink; }
@@ -23,10 +12,22 @@ $logo_white: #FFFFFF;
   100% { fill: $logo_blue; }
 }
 
+@-webkit-keyframes color-cycle {
+  0% { fill: $logo_pink; }
+  50% { fill: $logo_green; }
+  100% { fill: $logo_blue; }
+}
+
 @keyframes grow {
-  0% { transform: scale(0.0); }
+  0% {transform: scale(0.0); }
   70% { transform: scale(1.05); }
   100% { transform: scale(1.0); }
+}
+
+@-webkit-keyframes grow {
+  0% { -webkit-transform: scale(0.0); }
+  70% { -webkit-transform: scale(1.05); }
+  100% { -webkit-transform: scale(1.0); }
 }
 
 /* Mixins */
