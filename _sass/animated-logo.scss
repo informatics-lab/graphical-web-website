@@ -11,12 +11,30 @@ $logo_white: #FFFFFF;
   100% { fill: $logo_blue; }
 }
 
+@keyframes grow {
+  0% { transform: scale(0.0); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1.0); }
+}
+
+@keyframes expand {
+
+}
+
 /* Mixins */
 @mixin color-cycle-animation($delay) {
-  $time: 1;
+  $time: 2;
   animation: color-cycle #{$time + $delay}s ease infinite;
   -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
   animation-direction: alternate;
+}
+
+@mixin grow-animation($delay) {
+  transform: scale(0.0);
+  transform-origin: 50% 50% 0;
+  animation: grow 0.5s ease forwards;
+  -webkit-animation-delay: #{$delay}s; /* Chrome, Safari, Opera */
+  animation-delay: #{$delay}s;
 }
 
 /* Style */
@@ -24,28 +42,30 @@ $logo_white: #FFFFFF;
   width: 240px;
 
   .kaleider {
-    @for $i from 1 through 4 {
+    @for $i from 1 through 2 {
       .inner polygon:nth-child(#{$i}n) {
         @include color-cycle-animation($i)
       }
     }
 
     .inner {
+      @include grow-animation(0.05);
       fill: $logo_blue;
     }
 
     .outer {
       fill: $logo_green;
-      @include color-cycle-animation(5)
+      @include grow-animation(0.1);
     }
 
     .accents {
       fill: $logo_pink;
-      @include color-cycle-animation(0)
+      @include grow-animation(0.15);
     }
   }
 
   .text {
+    @include grow-animation(0.2);
     fill: $logo_white;
 
     #a.triangle {
