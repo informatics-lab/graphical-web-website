@@ -1,0 +1,96 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  color: #5a5a5a;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
+.navbar-inverse {
+  background-color: $jumbotron;
+  border-color: $jumbotron;
+
+  hr {
+    border-top:1px dotted $white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+
+    .logo {
+      height: 50px;
+    }
+  }
+
+  .navbar-menu {
+    color: $white;
+    margin-top: 12px;
+    margin-right: -6px;
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: $jumbotron;
+  padding-bottom: 0px;
+
+  .logo {
+    height: 260px;
+  }
+
+  .strapline {
+    color: $white;
+    font-size: 26px;
+    margin-top: 40px;
+    font-weight: 300;
+  }
+}
+
+.information {
+    text-align: center;
+    background-color: $white;
+
+    .date {
+      font-size: 26px;
+      color: $pink;
+    }
+
+    .location {
+      font-size: 18px;
+      color: $blue;
+
+      .divider {
+        color: $pink;
+      }
+    }
+
+    .register {
+      height: 100px;
+      margin: 30px;
+    }
+}
+
+footer {
+
+  .menu {
+    padding-left: 60px;
+    padding-right: 60px;
+
+    .divider {
+      color: $blue;
+    }
+  }
+
+  .menu-right {
+    text-align: right;
+  }
+}
