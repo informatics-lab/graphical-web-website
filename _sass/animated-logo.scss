@@ -1,0 +1,55 @@
+/* Logo Colours */
+$logo_blue: #36B7BC;
+$logo_green: #BEC945;
+$logo_pink: #E466A1;
+$logo_white: #FFFFFF;
+
+/* Animations */
+@keyframes color-cycle {
+  0% { fill: $logo_pink; }
+  50% { fill: $logo_green; }
+  100% { fill: $logo_blue; }
+}
+
+/* Mixins */
+@mixin color-cycle-animation($delay) {
+  $time: 1;
+  animation: color-cycle #{$time + $delay}s ease infinite;
+  -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+  animation-direction: alternate;
+}
+
+/* Style */
+.animated-logo {
+  width: 240px;
+
+  .kaleider {
+    @for $i from 1 through 4 {
+      .inner polygon:nth-child(#{$i}n) {
+        @include color-cycle-animation($i)
+      }
+    }
+
+    .inner {
+      fill: $logo_blue;
+    }
+
+    .outer {
+      fill: $logo_green;
+      @include color-cycle-animation(5)
+    }
+
+    .accents {
+      fill: $logo_pink;
+      @include color-cycle-animation(0)
+    }
+  }
+
+  .text {
+    fill: $logo_white;
+
+    #a.triangle {
+      fill: $logo_pink;
+    }
+  }
+}

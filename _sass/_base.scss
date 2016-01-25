@@ -11,8 +11,8 @@ body {
 }
 
 .navbar-inverse {
-  background-color: $jumbotron;
-  border-color: $jumbotron;
+  background-color: $header;
+  border-color: $header;
 
   hr {
     border-top:1px dotted $white;
@@ -33,24 +33,36 @@ body {
 
   .navbar-menu {
     color: $white;
-    margin-top: 12px;
+    margin-top: 8px;
     margin-right: -6px;
+
+    .btn-menu {
+      color: $white;
+      // border: 1px white solid;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 0px;
+    }
+
+    .btn-menu:hover {
+      color: $green;
+    }
   }
 }
 
 .jumbotron {
-  text-align: center;
+  text-align: center ;
   background-color: $jumbotron;
   padding-bottom: 0px;
 
-  .logo {
-    height: 260px;
-  }
 
   .strapline {
     color: $white;
     font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-top: 40px;
+    margin-bottom: 40px;
     font-weight: 300;
   }
 }
