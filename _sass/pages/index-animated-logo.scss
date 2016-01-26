@@ -119,8 +119,6 @@
   top: 0;
   z-index: 0;
 
-  @include grow-animation(0.5);
-
   @for $i from 1 through 7 {
     polygon:nth-child(#{$i}n) {
       @include color-cycle-animation($i, 10)
@@ -130,10 +128,26 @@
   .inner {
     @include rotate-animation(720);
     animation-direction: reverse;
+
+    .main {
+      @include grow-animation(0.5);
+    }
+
+    .accents {
+      @include grow-animation(0.55);
+    }
   }
 
   .outer {
     @include rotate-animation(600);
+
+    .main {
+      @include grow-animation(0.6);
+    }
+
+    .accents {
+      @include grow-animation(0.65);
+    }
   }
 
   .main {
