@@ -6,6 +6,7 @@ header {
     .container {
       margin: 0px;
       width: auto;
+      padding: 0px;
     }
 
     hr {
@@ -43,5 +44,51 @@ header {
         color: $green;
       }
     }
+  }
+
+  nav#menu {
+    display: none;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1031;
+
+    background-color: black;
+
+    color: $white;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3em;
+    letter-spacing: 0.1em;
+
+    ul {
+      list-style-type: none;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $blue;
+    }
+
+    .close-menu {
+      a {
+        color: $green;
+      }
+
+      a:hover {
+        color: $pink;
+      }
+    }
+  }
+
+  nav#menu:target {
+    display: block;
   }
 }
