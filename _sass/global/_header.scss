@@ -47,6 +47,7 @@ header {
   }
 
   nav#menu {
+    -webkit-transition: 0.3s;
     transition: 0.3s;
     position: absolute;
     left: 0px;
