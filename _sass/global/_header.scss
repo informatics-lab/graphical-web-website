@@ -47,17 +47,16 @@ header {
   }
 
   nav#menu {
-    display: none;
+    transition: 0.3s;
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 0px;
-    bottom: 0px;
+    top: -100%;
+    bottom: 100%;
     width: 100%;
     z-index: 1031;
 
-    background-color: black;
-    opacity: 0.9;
+    background-color: $header;
 
     color: $white;
     text-align: center;
@@ -67,7 +66,6 @@ header {
     letter-spacing: 0.1em;
 
     ul {
-      opacity: 1;
       list-style-type: none;
     }
 
@@ -92,6 +90,7 @@ header {
   }
 
   nav#menu:target {
-    display: block;
+    top: 0%;
+    bottom: 0%;
   }
 }
