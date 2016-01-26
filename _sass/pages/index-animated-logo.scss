@@ -111,6 +111,10 @@ $logo_white: #FFFFFF;
     }
 
   }
+
+  @media (min-width: 768px) {
+    margin-top: 90px;
+  }
 }
 
 .animated-background {
@@ -122,14 +126,13 @@ $logo_white: #FFFFFF;
   top: 0;
   z-index: 0;
 
-  @include grow-animation(0.3);
+  @include grow-animation(0.5);
 
   @for $i from 1 through 7 {
     polygon:nth-child(#{$i}n) {
       @include color-cycle-animation($i, 10)
     }
   }
-
 
   .inner {
     @include rotate-animation(720);
@@ -151,6 +154,6 @@ $logo_white: #FFFFFF;
   @media (min-width: 768px) {
     width: 100%;
     margin-left: auto;
-  };
+  }
 
 }
