@@ -2,6 +2,7 @@
 $logo_blue: #36B7BC;
 $logo_green: #BEC945;
 $logo_pink: #E466A1;
+$logo_pink_strong: #E5007E;
 $logo_white: #FFFFFF;
 
 /* Keyframe Animations */
@@ -29,9 +30,18 @@ $logo_white: #FFFFFF;
   100% { -webkit-transform: scale(1.0); }
 }
 
+@keyframes rotate {
+  0% { transform: rotateZ(0deg);  }
+  100% { transform: rotateZ(360deg);  }
+}
+
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotateZ(0deg);  }
+  100% { -webkit-transform: rotateZ(360deg);  }
+}
+
 /* Animation Mixins */
-@mixin color-cycle-animation($delay) {
-  $time: 2;
+@mixin color-cycle-animation($delay, $time) {
   -webkit-animation: color-cycle #{$time + $delay}s ease infinite;
   animation: color-cycle #{$time + $delay}s ease infinite;
 
@@ -43,8 +53,8 @@ $logo_white: #FFFFFF;
   transform: scale(0.0);
   -webkit-transform: scale(0.0);
 
-  transform-origin: 50% 50% 0;
-  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
 
   animation: grow 0.5s ease forwards;
   -webkit-animation: grow 0.5s ease forwards;
@@ -53,15 +63,24 @@ $logo_white: #FFFFFF;
   -webkit-animation-delay: #{$delay}s;
 }
 
+@mixin rotate-animation($duration) {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+
+  animation: rotate #{$duration}s linear infinite;
+  -webkit-animation: rotate #{$duration}s linear infinite;
+}
+
 /* Style */
 .animated-logo {
   width: 240px;
+  z-index: 2;
 
   .kaleider {
 
     @for $i from 1 through 2 {
       .inner polygon:nth-child(#{$i}n) {
-        @include color-cycle-animation($i)
+        @include color-cycle-animation($i, 2)
       }
     }
 
@@ -92,4 +111,46 @@ $logo_white: #FFFFFF;
     }
 
   }
+}
+
+.animated-background {
+  height: 100%;
+  margin-left: -50%;
+  opacity: 0.15;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+  @include grow-animation(0.3);
+
+  @for $i from 1 through 7 {
+    polygon:nth-child(#{$i}n) {
+      @include color-cycle-animation($i, 10)
+    }
+  }
+
+
+  .inner {
+    @include rotate-animation(720);
+    animation-direction: reverse;
+  }
+
+  .outer {
+    @include rotate-animation(600);
+  }
+
+  .main {
+    fill: $logo_blue;
+  }
+
+  .accents {
+    fill: $logo_pink_strong;
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    margin-left: auto;
+  };
+
 }

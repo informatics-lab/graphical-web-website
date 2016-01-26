@@ -1,0 +1,47 @@
+header {
+  .navbar-inverse {
+    background-color: $header;
+    border-color: $header;
+
+    .container {
+      margin: 0px;
+      width: auto;
+    }
+
+    hr {
+      border-top:1px dotted $white;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
+    }
+
+    .navbar-brand {
+      padding: 0px;
+
+      .logo {
+        height: 50px;
+      }
+    }
+
+    .navbar-menu {
+      color: $white;
+      margin-top: 8px;
+      margin-right: -6px;
+      text-align: right;
+
+      .btn-menu {
+        color: $white;
+        // border: 1px white solid;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 0px;
+      }
+
+      .btn-menu:hover {
+        color: $green;
+      }
+    }
+  }
+}
