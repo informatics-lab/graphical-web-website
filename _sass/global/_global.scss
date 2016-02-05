@@ -10,3 +10,12 @@ body {
   font-weight: 600;
   z-index: 0;
 }
+
+a {
+  text-decoration: none;
+  color: $green;
+}
+
+a:hover {
+  color: $blue;
+}
