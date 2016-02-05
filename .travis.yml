@@ -5,6 +5,9 @@ script:
 - jekyll build
 notifications:
   email: false
+branches:
+  only:
+    - gh-pages
 deploy:
   provider: s3
   access_key_id: $AWS_KEY
