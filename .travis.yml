@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.1
+script:
+- jekyll build
+notifications:
+  email: false
+deploy:
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: informatics-graphical-web-website
+  local-dir: _site
+  acl: public_read
+  skip_cleanup: true
+  region: eu-west-1
+  on:
+    branch: gh-pages
