@@ -1,4 +1,4 @@
-# Graphical Web [![Build Status](https://travis-ci.org/met-office-lab/graphical-web-website.svg?branch=master)](https://travis-ci.org/met-office-lab/graphical-web-website)
+# Graphical Web [![Build Status](https://travis-ci.org/met-office-lab/graphical-web-website.svg?branch=gh-pages)](https://travis-ci.org/met-office-lab/graphical-web-website)
 
 A conference for visualizing the connected world.
 
