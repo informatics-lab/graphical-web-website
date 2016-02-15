@@ -12,3 +12,9 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+exclude:
+  - node_modules
+  - vendor
+
+google_analytics: UA-73803410-1

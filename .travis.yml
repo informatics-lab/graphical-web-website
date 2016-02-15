@@ -2,7 +2,11 @@ language: ruby
 rvm:
 - 2.1
 script:
-- jekyll build
+  - npm install
+  - grunt test
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 notifications:
   email: false
 branches:
@@ -19,3 +23,5 @@ deploy:
   region: eu-west-1
   on:
     branch: gh-pages
+after_deploy:
+  - grunt purge
