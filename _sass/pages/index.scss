@@ -3,7 +3,7 @@
   background-color: $jumbotron;
   padding-bottom: 0px;
   position: relative;
-  
+
 
   .strapline {
     color: $white;
@@ -24,6 +24,18 @@
       font-size: 26px;
       color: $pink;
     }
+
+    .call {
+      font-size: 26px;
+      a {
+        color: $green;
+      }
+
+      a:hover {
+        color: $pink;
+      }
+    }
+
 
     .location {
       font-size: 18px;
