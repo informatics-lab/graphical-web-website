@@ -19,3 +19,19 @@ a {
 a:hover {
   color: $blue;
 }
+
+h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: dotted 1px black;
+  display: inline;
+  line-height: 1.7em;
+
+  &::before {
+    content: "\00a0\00a0\00a0"
+  }
+
+  &::after {
+    content: "\00a0\00a0\00a0"
+  }
+}
