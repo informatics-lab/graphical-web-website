@@ -61,14 +61,43 @@ header {
 
     color: $white;
     text-align: center;
-    font-weight: 300;
+    text-transform: uppercase;
+    font-weight: 200;
     font-size: 2.4rem;
-    line-height: 3em;
+    line-height: 2em;
     letter-spacing: 0.1em;
+
+    .menu-header {
+      border-bottom: 1px white dotted;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .logo {
+      margin-top: -16px;
+      height: 50px;
+    }
+
+    .menu-close {
+      font-size: 14px;
+    }
 
     ul {
       padding: 0px;
       list-style-type: none;
+      margin-top: 50px;
+
+      li {
+
+        img {
+          width: 2em;
+          padding: 0.5em;
+        }
+        img.left {
+          margin-left: -4em;
+        }
+
+      }
     }
 
     a {
