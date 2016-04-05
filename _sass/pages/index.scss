@@ -21,8 +21,18 @@
     background-color: $white;
 
     .date {
-      font-size: 26px;
+      font-size: 22px;
+      font-weight: bold;
       color: $pink;
+      margin-bottom: 0px;
+      text-transform: uppercase;
+    }
+
+    .about {
+      font-weight: 200;
+      max-width: 60%;
+      margin-top: 20px;
+      margin-left: 20%;
     }
 
     .call {
