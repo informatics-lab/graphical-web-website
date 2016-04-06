@@ -28,25 +28,27 @@
 
   .left {
     width: 20%;
-    height: 700px;
+    height: 600px;
     top: 150px;
     left: 0px;
     position: absolute;
+    overflow: hidden;
     img {
       height: 100%;
-      width: 100%;
+      width: auto;
     }
   }
 
   .right {
     width: 20%;
-    height: 700px;
+    height: 600px;
     top: 150px;
     left: 80%;
     position: absolute;
+    overflow: hidden;
     img {
       height: 100%;
-      width: 100%;
+      width: auto;
     }
   }
 
