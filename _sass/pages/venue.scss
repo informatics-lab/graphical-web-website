@@ -1,72 +1,23 @@
 .venue {
 
-  color: $header;
+  background-image: url('../img/bg_mo.jpg');
+  background-size: cover;
+  font-weight: 200;
+
+  color: $white;
 
   text-align: center;
 
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 100px;
 
-  a {
-    img {
-      height: 10em;
-    }
+  h1 {
+    font-size: 44px;
   }
 
   .spacer {
     height: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-
-  .address {
-    p {
-      font-weight: 200;
-      color: $pink;
-    }
-  }
-
-  .left {
-    width: 20%;
-    height: 700px;
-    top: 150px;
-    left: 0px;
-    position: absolute;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .right {
-    width: 20%;
-    height: 700px;
-    top: 150px;
-    left: 80%;
-    position: absolute;
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .content {
-    padding-top: 0px;
-    margin-left: 20%;
-    width: 60%;
-
-    h1 {
-      font-weight: 100;
-      font-size: 18px;
-    }
-
-    p {
-      font-weight: 100;
-    }
-
-    a {
-      color: $header;
-      text-decoration: underline;
-    }
   }
 }
