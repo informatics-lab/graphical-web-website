@@ -16,7 +16,7 @@ deploy:
   provider: s3
   access_key_id: $AWS_KEY
   secret_access_key: $AWS_SECRET
-  bucket: informatics-graphical-web-website
+  bucket: informatics-graphical-web-website-2017
   local-dir: _site
   acl: public_read
   skip_cleanup: true
